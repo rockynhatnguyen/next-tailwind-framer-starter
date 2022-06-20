@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
-import Head from 'next/head'
-import Image from 'next/image'
+import Head from "next/head"
+import Image from "next/image"
 import "../styles/home.module.css"
+
+// Images
+import headerImage from "../public/images/image-2.webp"
 
 // Components
 import Header from "../components/Header"
@@ -37,11 +40,12 @@ export default function Home() {
                 <div className='transition-image final'>
                   <motion.div
                     transition={{ ease: [0.6, 0.01, -0.05, 0.9], duration: 1.6 }}
-                    layoutId='main-image-1'>
+                    layoutid='main-image-1'>
                     <Image
-                      src={`/images/image-2.jpg`}
+                      src={headerImage}
                       alt="Main Agency Image"
-                      layout="fill"
+                      layout="responsive"
+                      placeholder="blur"
                     />
                   </motion.div>
                 </div>

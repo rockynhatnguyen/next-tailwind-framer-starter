@@ -12,7 +12,7 @@ body.loading {
       align-items: center;
       justify-content: center;
       &.image-1 {
-        width: 400px;
+        width: 300px;
         left: 16%;
         bottom: 14%;
         @media (max-width: $layout-breakpoint-xsmall) {
@@ -21,7 +21,7 @@ body.loading {
         }
       }
       &.image-3 {
-        width: 300px;
+        width: 250px;
         right: 12%;
         top: 8%;
         @media (max-width: $layout-breakpoint-xsmall) {
@@ -30,7 +30,7 @@ body.loading {
         }
       }
       &.image-4 {
-        max-width: 400px;
+        max-width: 300px;
         width: 40%;
         right: 20%;
         bottom: 10%;
@@ -40,7 +40,7 @@ body.loading {
         }
       }
       &.image-5 {
-        width: 280px;
+        width: 200px;
         left: 14%;
         top: 12%;
         @media (max-width: $layout-breakpoint-xsmall) {

@@ -2,6 +2,13 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+// Images
+import image1 from "../public/images/image-1.webp"
+import image2 from "../public/images/image-2.webp"
+import image3 from "../public/images/image-3.webp"
+import image4 from "../public/images/image-4.webp"
+import image5 from "../public/images/image-5.webp"
+
 const container = {
   show: {
     transition: {
@@ -56,43 +63,46 @@ const Loader = ({ setLoading }) => {
     <motion.div className="loader">
       <motion.div
         variants={container}
-        onAnimationComplete={() => setLoading(false)}
+        onAnimationComplete={() => setLoading(true)}
         initial="hidden"
         animate="show"
         exit="exit"
         className="loader-inner"
       >
-        <ImageBlock variants={item} id="image-1" />
+        <ImageBlock variants={item} name="image-1" id={image1} />
         <motion.div variants={itemMain} className="transition-image image-2">
           <Image
-            layoutId="main-image"
-            src={`/images/image-2.jpg`}
+            layoutid="main-image"
+            src={image2}
             alt="Loader image"
             layout="fill"
+            objectFit="cover"
           />
         </motion.div>
-        <ImageBlock variants={item} id="image-3" />
-        <ImageBlock variants={item} id="image-4" />
-        <ImageBlock variants={item} id="image-5" />
+        <ImageBlock variants={item} name="image-3" id={image3} />
+        <ImageBlock variants={item} name="image-4" id={image4} />
+        <ImageBlock variants={item} name="image-5" id={image5} />
       </motion.div>
     </motion.div>
   );
 };
 
-export const ImageBlock = ({ posX, posY, variants, id }) => {
+export const ImageBlock = ({ posX, posY, variants, name, id }) => {
   return (
     <motion.div
       variants={variants}
-      className={`image-block ${id}`}
+      className={`image-block ${name}`}
       style={{
         top: `${posY}vh`,
         left: `${posX}vw `,
       }}
     >
       <Image
-        src={`/images/${id}.jpg`}
-        alt={id}
-        layout="fill"
+        className={`image-img ${name}`}
+        src={id}
+        alt={`Agency gathering room.`}
+        layout="responsive"
+        objectFit="cover"
       />
     </motion.div>
   );
